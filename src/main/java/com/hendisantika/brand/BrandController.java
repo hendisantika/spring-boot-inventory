@@ -34,7 +34,7 @@ public class BrandController {
         List<Category> listCategories = categoryRepository.findAll();
 
         model.addAttribute("listCategories", listCategories);
-        model.addAttribute("marca", new Brand());
+        model.addAttribute("brand", new Brand());
         return "brand_form";
     }
 
@@ -42,5 +42,13 @@ public class BrandController {
     public String saveBrand(Brand brand) {
         brandRepository.save(brand);
         return "redirect:/";
+    }
+
+    @GetMapping
+    public String listBrand(Model model) {
+        List<Brand> listBrands = brandRepository.findAll();
+        model.addAttribute("listBrands", listBrands);
+
+        return "brand";
     }
 }
