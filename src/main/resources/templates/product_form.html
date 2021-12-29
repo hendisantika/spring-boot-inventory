@@ -60,17 +60,18 @@
 
             <!-- We upload the details -->
             <th:block th:each="details,status : ${product.details}" th:unless="${product.id == null}">
-                <input name="detailID" th:value="${details.id}" type="hidden">
+                <input name="detailsID" th:value="${details.id}" type="hidden">
 
                 <div class="form-group row">
-                    <label class="col-form-label col-sm-4">Detail #[[${status.count}]] : </label>
+                    <label class="col-form-label col-sm-4">Details #[[${status.count}]] : </label>
 
                     <div class="col-sm-4">
-                        <input class="form-control" name="detailName" required th:value="${details.name}" type="text">
+                        <input class="form-control" name="detailsName" required th:value="${details.name}" type="text">
                     </div>
 
                     <div class="col-sm-4">
-                        <input class="form-control" name="detailValue" required th:value="${details.value}" type="text">
+                        <input class="form-control" name="detailsValue" required th:value="${details.value}"
+                               type="text">
                     </div>
                 </div>
             </th:block>
@@ -81,33 +82,33 @@
                     <label class="col-form-label col-sm-4">Detail #1 : </label>
 
                     <div class="col-sm-4">
-                        <input class="form-control" name="detailName" placeholder="Name" required type="text">
+                        <input class="form-control" name="detailsName" placeholder="Name" required type="text">
                     </div>
 
                     <div class="col-sm-4">
-                        <input class="form-control" name="detailValue" placeholder="Value" required type="text">
+                        <input class="form-control" name="detailsValue" placeholder="Value" required type="text">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-form-label col-sm-4">Detail #2 : </label>
 
                     <div class="col-sm-4">
-                        <input class="form-control" name="detailName" placeholder="Name" required type="text">
+                        <input class="form-control" name="detailsName" placeholder="Name" required type="text">
                     </div>
 
                     <div class="col-sm-4">
-                        <input class="form-control" name="detailValue" placeholder="Value" required type="text">
+                        <input class="form-control" name="detailsValue" placeholder="Value" required type="text">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-form-label col-sm-4">Detail #3 : </label>
 
                     <div class="col-sm-4">
-                        <input class="form-control" name="detailName" placeholder="Name" required type="text">
+                        <input class="form-control" name="detailsName" placeholder="Name" required type="text">
                     </div>
 
                     <div class="col-sm-4">
-                        <input class="form-control" name="detailValue" placeholder="Value" required type="text">
+                        <input class="form-control" name="detailsValue" placeholder="Value" required type="text">
                     </div>
                 </div>
             </th:block>

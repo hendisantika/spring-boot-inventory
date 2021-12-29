@@ -50,7 +50,7 @@ public class BrandController {
         List<Brand> listBrands = brandRepository.findAll();
         model.addAttribute("listBrands", listBrands);
 
-        return "brand";
+        return "brands";
     }
 
     @GetMapping("/edit/{id}")
