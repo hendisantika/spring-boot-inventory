@@ -62,4 +62,10 @@ public class UserController {
 
         return "user_form";
     }
+
+    @GetMapping("/delete/{id}")
+    public String deleteUser(@PathVariable("id") Integer id) {
+        userRepository.deleteById(id);
+        return "redirect:/users";
+    }
 }
