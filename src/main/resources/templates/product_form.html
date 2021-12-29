@@ -59,18 +59,18 @@
             </div>
 
             <!-- We upload the details -->
-            <th:block th:each="detail,status : ${product.detail}" th:unless="${product.id == null}">
-                <input name="detailID" th:value="${detail.id}" type="hidden">
+            <th:block th:each="details,status : ${product.details}" th:unless="${product.id == null}">
+                <input name="detailID" th:value="${details.id}" type="hidden">
 
                 <div class="form-group row">
                     <label class="col-form-label col-sm-4">Detail #[[${status.count}]] : </label>
 
                     <div class="col-sm-4">
-                        <input class="form-control" name="detailName" required th:value="${detail.name}" type="text">
+                        <input class="form-control" name="detailName" required th:value="${details.name}" type="text">
                     </div>
 
                     <div class="col-sm-4">
-                        <input class="form-control" name="detailValue" required th:value="${detalle.value}" type="text">
+                        <input class="form-control" name="detailValue" required th:value="${details.value}" type="text">
                     </div>
                 </div>
             </th:block>
