@@ -1,5 +1,6 @@
 package com.hendisantika.category;
 
+import com.hendisantika.brand.Brand;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

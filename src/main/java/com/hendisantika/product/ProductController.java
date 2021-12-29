@@ -1,5 +1,7 @@
 package com.hendisantika.product;
 
+import com.hendisantika.category.Category;
+import com.hendisantika.category.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
