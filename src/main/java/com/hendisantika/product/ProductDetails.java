@@ -37,6 +37,21 @@ public class ProductDetails {
     private String value;
 
     @ManyToOne
-    @JoinColumn(name = "producto_id")
-    private Product producto;
+    @JoinColumn(name = "product_id")
+    private Product product;
+
+    public ProductDetails(Integer id, String name, String value, Product product) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.value = value;
+        this.product = product;
+    }
+
+    public ProductDetails(String name, String value, Product product) {
+        super();
+        this.name = name;
+        this.value = value;
+        this.product = product;
+    }
 }

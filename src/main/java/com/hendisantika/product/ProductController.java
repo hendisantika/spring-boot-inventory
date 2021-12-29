@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -36,4 +38,21 @@ public class ProductController {
         return "product_form";
     }
 
+    @PostMapping("/productos/guardar")
+    public String saveProduct(Product product, HttpServletRequest request) {
+        String[] detailsIDs = request.getParameterValues("detailsID");
+        String[] detailsNames = request.getParameterValues("detailsName");
+        String[] detailsValues = request.getParameterValues("detailsValue");
+
+        for (int i = 0; i < detailsNames.length; i++) {
+            if (detailsIDs != null && detailsIDs.length > 0) {
+                product.setDetails(Integer.valueOf(detailsIDs[i]), detailsNames[i], detailsValues[i]);
+            } else {
+                product.addDetails(detailsNames[i], detailsValues[i]);
+            }
+        }
+
+        productRepository.save(product);
+        return "redirect:/";
+    }
 }
