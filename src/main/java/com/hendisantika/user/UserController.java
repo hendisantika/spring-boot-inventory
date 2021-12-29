@@ -34,4 +34,14 @@ public class UserController {
         return "users";
     }
 
+    @GetMapping("/new")
+    public String showUserRegistrationForm(Model model) {
+        List<Role> listRoles = roleRepository.findAll();
+
+        model.addAttribute("listRoles", listRoles);
+        model.addAttribute("user", new User());
+
+        return "usuario_formulario";
+    }
+
 }
