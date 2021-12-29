@@ -1,6 +1,5 @@
 package com.hendisantika.product;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -23,7 +22,6 @@ import javax.persistence.ManyToOne;
  */
 @Entity
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 public class ProductDetails {
     @Id
