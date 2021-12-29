@@ -28,7 +28,7 @@ public class ProductController {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    @GetMapping("/nuevo")
+    @GetMapping("/new")
     public String showNewProductForm(Model model) {
         List<Category> listCategories = categoryRepository.findAll();
 
@@ -38,7 +38,7 @@ public class ProductController {
         return "product_form";
     }
 
-    @PostMapping("/productos/guardar")
+    @PostMapping
     public String saveProduct(Product product, HttpServletRequest request) {
         String[] detailsIDs = request.getParameterValues("detailsID");
         String[] detailsNames = request.getParameterValues("detailsName");
@@ -55,4 +55,13 @@ public class ProductController {
         productRepository.save(product);
         return "redirect:/";
     }
+
+    @GetMapping
+    public String listProducts(Model model) {
+        List<Product> listProducts = productRepository.findAll();
+        model.addAttribute("listProducts", listProducts);
+
+        return "products";
+    }
+
 }
