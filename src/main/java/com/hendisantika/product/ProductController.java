@@ -71,7 +71,7 @@ public class ProductController {
         model.addAttribute("product", product);
 
         List<Category> listCategorias = categoryRepository.findAll();
-        model.addAttribute("listCategories", listaCategorias);
+        model.addAttribute("listCategories", listCategorias);
 
         return "product_form";
     }
