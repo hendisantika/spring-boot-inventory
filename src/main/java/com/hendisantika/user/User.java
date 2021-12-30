@@ -4,14 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -39,7 +32,8 @@ public class User {
     @Column(length = 10, nullable = false)
     private String password;
 
-    @ManyToMany // (cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
+    @ManyToMany
+            (/*cascade = CascadeType.PERSIST,*/fetch = FetchType.EAGER)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns =
     @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
